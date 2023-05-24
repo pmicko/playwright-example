@@ -1,47 +1,52 @@
-# Requirements for test
-The test script shall verify following test scenario:
+# 🧪 Playwright E2E Example
 
-## Start 💡
+## 👋️ Introduction
 
-- start the browser (Firefox or Chrome) and open https://salsita-qa-homework.netlify.app
+This repository holds example of E2E test in Playwright framework
 
-**Goal** 🚀
+## 🥱 TL;DR
 
-- proceed to next page
+Test script is here 👉 [test-example.spec.ts](test-example.spec.ts)
 
-## Main Page 💡
+## 📑 Test scenario
 
-Just home page.
+Test scenario (requirement) for E2E test is here: [test-requirements](test-requirements.md)
 
-- click the Enter button -> "code" page loads
+## ⚙️ Setup
 
-**Goal** 🚀
+### Installation
 
-- proceed to next page
+Install dependencies by running in terminal:
+```shell
+npm install
+```
 
-## Code Page 💡
+(only for 1st time installation) run below command to download required browsers:
+```shell
+npx playwright install
+```
 
-Somewhere on the page is the secret code to proceed to the next page.
+## 🚀 How to run test
 
-**Goal** 🚀
+Run in terminal:
+```shell
+npx playwright test
+```
+## 🌲 Codebase
+	.
+	├── tests              # E2E spec
+	└── fixtures           # test data for specs
 
-- enter secret value into the input field
-- ensure that the "robot" checkbox is checked
-- submit the form -> "lists" page loads (list of famous quotes)
+When test run finishes, file structure will be extended for these generated folders:
 
-## Lists Page 💡
+	.
+	├── ...
+	├── playwright-report  # contains html report with details like test steps, attached test code and embedded video
+	├── test-results       # contains generated data like recorded video if test failed
+	├── ...
 
-On this page there are quote categories "Famous Quotes" and "Awesome Quotes", each having several quotes. Each quote has a score number in parentheses.
+## 💡 Test configuration options
+You can adjust Playwright behaviour with many configuration options in following file: [playwright.config.ts](./playwright.config.ts)
 
-At the bottom there is a "Total score" number.
-
-The texts (category names and quotes in each category) are always the same, however they are presented in random order. The score numbers are volatile.
-
-**Goal** 🚀
-
-- verify that all the categories and their quotes are displayed. No extra quotes, no missing ones.
-- verify that the "Total score:" is the sum of all quote scores
-
-## Notes ℹ️
-
-Please, keep it simple, test only the scenario above (not negative scenarios or other things)
+### 🧪 Further reading about Playwright
+For more information about Playwright framework, check out official [documentation](https://playwright.dev/docs/intro)
