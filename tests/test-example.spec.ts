@@ -22,7 +22,7 @@ test('Test quotes as a user flow', async({ page }) => {
 
     // Lists Page 💡
     const categories = await page.locator('h2').allTextContents()
-    expect(categories.sort()).toEqual(['Awesome quotes', 'Famous quotesS'])
+    expect(categories.sort()).toEqual(['Awesome quotes', 'Famous quotes'])
 
     const awesomeQuotesFound = await page.locator('[qa-id=Awesome] span:not(.score)').allTextContents()
     expect(awesomeQuotesFound.sort()).toEqual(QUOTES.awesome.sort())
